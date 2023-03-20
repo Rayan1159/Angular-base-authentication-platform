@@ -1,9 +1,9 @@
 import { HttpClientModule } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { HttpService } from '../services/Http.service';
-import {AuthService} from "../services/Auth.service";
-import {UserService} from "../services/User.service";
+import { HttpService } from '../../services/Http.service';
+import {AuthService} from "../../services/Auth.service";
+import {UserService} from "../../services/User.service";
 
 
 @Component({

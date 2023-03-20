@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './services/Http.service';
+import { HttpService } from '../services/Http.service';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AuthService} from "./services/Auth.service";
-import {UserService} from "./services/User.service";
+import {AuthService} from "../services/Auth.service";
+import {UserService} from "../services/User.service";
 
 @NgModule({
   declarations: [
