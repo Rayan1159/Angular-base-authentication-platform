@@ -10,11 +10,11 @@ export class HttpService {
     return this.http.get(url);
   }
 
-  post(url: string, data: any) {
+  post(url: string, data: any[]) {
     return this.http.post(url, data);
   }
 
-  put(url: string, data: any) {
+  put(url: string, data: any[]) {
     return this.http.put(url, data);
   }
 

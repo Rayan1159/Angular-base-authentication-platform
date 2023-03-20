@@ -6,11 +6,13 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './services/Http.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     LandingComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
