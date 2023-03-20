@@ -13,10 +13,14 @@
       <form [formGroup]="form">
         <div>
           <input type="email" name="email" placeholder="Your email" formControlName="email">
-          <span *ngIf="email && email.invalid && email.pristine && email.touched">Email invalid</span>
+          <span *ngIf="email && email.invalid && email.touched">Email invalid</span>
         </div>
         <div>
-          <button type="button" (click)="loginOnClick()">Login</button>
+          <input type="password" name="password" placeholder="Your password" formControlName="password">
+          <span *ngIf="password && password.invalid && password.touched">Password invalid</span>
+        </div>
+        <div>
+          <button type="button" [disabled]="form.invalid" (click)="loginOnClick()">Login</button>
         </div>
       </form>
     </div>

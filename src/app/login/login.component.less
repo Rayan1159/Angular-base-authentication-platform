@@ -5,12 +5,12 @@
   align-items: center;
 
   form div {
+    padding-bottom: 5px;
+
     .form {
+      position: absolute;
       display: flex;
-      position: relative;
       flex-direction: column;
-      top: 50%;
-      transform: translateY(-50%);
       gap: 10px;
       width: 15vw;
       height: 10vh;
@@ -25,4 +25,8 @@
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+button:disabled {
+  opacity: 0.5;
 }
