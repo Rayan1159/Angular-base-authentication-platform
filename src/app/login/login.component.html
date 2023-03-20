@@ -10,6 +10,15 @@
   <router-outlet></router-outlet>
   <div class="container">
     <div class="form">
+      <form [formGroup]="form">
+        <div>
+          <input type="email" name="email" placeholder="Your email" formControlName="email">
+          <span *ngIf="email && email.invalid && email.pristine && email.touched">Email invalid</span>
+        </div>
+        <div>
+          <button type="button" (click)="loginOnClick()">Login</button>
+        </div>
+      </form>
     </div>
   </div>
 </body>

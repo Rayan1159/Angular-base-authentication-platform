@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { HttpService } from '../services/Http.service';
 
 
@@ -9,16 +9,23 @@ import { HttpService } from '../services/Http.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit {
-  private formControl: FormControl;
+export class LoginComponent implements OnInit{
 
-  constructor(private http: HttpService) {
-    this.formControl = new FormControl();
-  }
+  get email() { return this.form.get('email'); }
+  public form: FormGroup = new FormGroup<any>({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
+  constructor(private http: HttpService) {  }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/v1/users').subscribe((data) => {
-      console.log(data);
-    });
+    //TODO Check form
+  }
+
+  loginOnClick() {
+    if (this.form.valid) {
+      //TODO send to server
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 }
