@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { HttpService } from '../services/Http.service';
+import {AuthService} from "../services/Auth.service";
+import {UserService} from "../services/User.service";
 
 
 @Component({
@@ -23,11 +25,11 @@ export class LoginComponent implements OnInit{
       Validators.required, Validators.minLength(8)
     ])
   });
-  
-  constructor(private http: HttpService) {  }
+
+  constructor(private http: HttpService, private auth: AuthService, private user: UserService) {  }
 
   ngOnInit() {
-    //TODO Check form
+    console.log(this.auth.isLoggedIn())
   }
 
   loginOnClick() {

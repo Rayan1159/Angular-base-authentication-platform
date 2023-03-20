@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './services/Http.service';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AuthService} from "./services/Auth.service";
+import {UserService} from "./services/User.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    AuthService,
+    UserService
+  ],
   bootstrap: [LandingComponent]
 })
 export class AppModule { }
