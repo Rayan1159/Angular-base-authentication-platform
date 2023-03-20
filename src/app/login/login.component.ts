@@ -12,7 +12,9 @@ import { HttpService } from '../services/Http.service';
 export class LoginComponent implements OnInit{
 
   get email() { return this.form.get('email'); }
+
   get password() { return this.form.get('password'); }
+
   public form: FormGroup = new FormGroup<any>({
     email: new FormControl('', [
       Validators.required, Validators.email
@@ -21,6 +23,7 @@ export class LoginComponent implements OnInit{
       Validators.required, Validators.minLength(8)
     ])
   });
+  
   constructor(private http: HttpService) {  }
 
   ngOnInit() {
