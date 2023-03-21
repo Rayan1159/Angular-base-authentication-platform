@@ -9,11 +9,15 @@ import {animate, style, transition, trigger} from "@angular/animations";
     trigger('toast', [
       transition(':enter', [
         style({
-          transform: 'translateY(-100%)',
+          'transform': 'translateY(-100%)',
+        }),
+        style({
+          transform: 'translateX(-50%)',
           left: '50%',
         }),
         animate('0.5s ease-in', style({transform: 'translateY(0)'}))
       ]),
+
     ]),
   ]
 })
