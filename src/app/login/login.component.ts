@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit{
 
   loginOnClick() {
     if (this.form.valid) {
-      //TODO send to server
+      if (!(this.auth.isLoggedIn())) {
+        s
+      }
     } else {
       this.form.markAllAsTouched();
     }
